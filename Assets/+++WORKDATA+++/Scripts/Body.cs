@@ -17,6 +17,9 @@ public class Body : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
+            Object.FindFirstObjectByType<WinManager>()?.AddScore();
+
+            
             Instantiate(debrisParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
