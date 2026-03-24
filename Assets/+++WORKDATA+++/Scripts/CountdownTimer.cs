@@ -1,52 +1,51 @@
 using UnityEngine;
-using TMPro; // Falls du TextMeshPro nutzt (empfohlen)
+using TMPro;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float timeRemaining = 60f; // Startzeit in Sekunden
+    public float timeRemaining = 60f;
     public bool timerIsRunning = false;
-    
-    public TMP_Text timeText;       // Referenz zum UI-Text
-    public GameObject losePanel;    // Referenz zum Lose-Panel
 
-    //private bool win1;
+    public TMP_Text timeText;
+    public GameObject losePanel;
+
+    private WinManager winManager;
 
     private void Start()
     {
-        // Timer starten
         timerIsRunning = true;
-        losePanel.SetActive(false); // Sicherstellen, dass das Panel am Anfang aus ist
-        
+        losePanel.SetActive(false);
+
+        winManager = FindObjectOfType<WinManager>();
     }
 
     void Update()
     {
-       // win1 = GetComponent<WinManager>().win;
-       // if (win1 == true)
+        if (!timerIsRunning) return;
+
+        // Stoppt Timer wenn gewonnen wurde
+        if (winManager != null && winManager.win)
         {
-           // Time.timeScale = 0f;
+            timerIsRunning = false;
+            return;
         }
-        if (timerIsRunning)
+
+        if (timeRemaining > 0)
         {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
-            }
-            else
-            {
-                Debug.Log("Zeit abgelaufen!");
-                timeRemaining = 0;
-                timerIsRunning = false;
-                GameOver();
-            }
+            timeRemaining -= Time.deltaTime;
+            DisplayTime(timeRemaining);
+        }
+        else
+        {
+            timeRemaining = 0;
+            timerIsRunning = false;
+            GameOver();
         }
     }
 
     void DisplayTime(float timeToDisplay)
     {
-        // Berechnet Minuten und Sekunden
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -54,7 +53,7 @@ public class CountdownTimer : MonoBehaviour
 
     void GameOver()
     {
-        losePanel.SetActive(true);   // Lose-Panel anzeigen
-        Time.timeScale = 0f;         // Das Spiel komplett pausieren
+        losePanel.SetActive(true);
+        Time.timeScale = 0f; // Spiel pausieren
     }
 }
