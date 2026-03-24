@@ -1,16 +1,20 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class teleport_script : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private Transform destination;
-
     public bool portal1;
     public float distance = 0.2f;
-    
+    public Collider2D tpCollider;
+
+    public float arriveTime;
+    [Range(0, 5)] public float portalCooldown;
     
     void Start()
     {
@@ -19,6 +23,9 @@ public class teleport_script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(Time.time < arriveTime + portalCooldown)
+            return;
+        
         if (other.tag == "ball")
         {
             if (Vector2.Distance(transform.position, other.transform.position)> distance)
@@ -31,10 +38,9 @@ public class teleport_script : MonoBehaviour
                 other.transform.position = new Vector2(destination.position.x, destination.position.y);
                     Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
 
+                    destination.GetComponent<teleport_script>().arriveTime = Time.time;
                 Quaternion delta = Quaternion.FromToRotation(transform.right, destination.right);
                 rb.linearVelocity = delta*rb.linearVelocity;
-
-                
             }
         }
 
@@ -53,5 +59,6 @@ public class teleport_script : MonoBehaviour
             return protalTwo == null ? null : protalTwo.transform;
         }
     }
+    
 }
 
