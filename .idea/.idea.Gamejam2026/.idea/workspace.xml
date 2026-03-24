@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0fa4e81-b051-49f3-8f47-4abffd09b63b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Scenes/TimScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Scenes/TimScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Scripts/CountdownTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Scripts/CountdownTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Scripts/WinCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Scripts/WinCondition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamejam2026/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamejam2026/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Prefabs/portal1_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Prefabs/portal1_prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Prefabs/portal2_prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/+++WORKDATA+++/Prefabs/portal2_prefab.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1774268593842</updated>
       <workItem from="1774268595539" duration="1334000" />
-      <workItem from="1774340240565" duration="7663000" />
+      <workItem from="1774340240565" duration="8173000" />
     </task>
     <servers />
   </component>
