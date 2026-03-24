@@ -9,15 +9,23 @@ public class CountdownTimer : MonoBehaviour
     public TMP_Text timeText;       // Referenz zum UI-Text
     public GameObject losePanel;    // Referenz zum Lose-Panel
 
+    //private bool win1;
+
     private void Start()
     {
         // Timer starten
         timerIsRunning = true;
         losePanel.SetActive(false); // Sicherstellen, dass das Panel am Anfang aus ist
+        
     }
 
     void Update()
     {
+       // win1 = GetComponent<WinManager>().win;
+       // if (win1 == true)
+        {
+           // Time.timeScale = 0f;
+        }
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
