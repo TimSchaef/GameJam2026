@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Portal_placement_script : MonoBehaviour
 {
@@ -25,6 +27,9 @@ public class Portal_placement_script : MonoBehaviour
     {
         PortalOne();
         PortalTwo();
+        
+        if(Input.GetKeyDown(KeyCode.R))
+            OnReload();
     }
 
     void PortalOne()
@@ -69,5 +74,10 @@ public class Portal_placement_script : MonoBehaviour
         else if (currentPortal2Selected != null && Input.GetMouseButtonUp(1))
             currentPortal2Selected = null;
 
+    }
+
+    void OnReload()
+    {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

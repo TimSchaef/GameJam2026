@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Body : MonoBehaviour
 {
@@ -8,14 +10,10 @@ public class Body : MonoBehaviour
         
     }
     
-    void Update()
-    {
-        
-    }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.tag =="Player")
         {
             Object.FindFirstObjectByType<WinManager>()?.AddScore();
 

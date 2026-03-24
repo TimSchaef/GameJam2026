@@ -26,7 +26,7 @@ public class teleport_script : MonoBehaviour
         if(Time.time < arriveTime + portalCooldown)
             return;
         
-        if (other.tag == "ball")
+        if (other.tag == "Player")
         {
             if (Vector2.Distance(transform.position, other.transform.position)> distance)
             {
