@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8806929541129666495}
   - component: {fileID: 8313119785570332037}
   - component: {fileID: 5462675537838787636}
+  - component: {fileID: 720903126237431556}
   m_Layer: 0
   m_Name: portal1_prefab
   m_TagString: portal1
@@ -172,3 +173,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::teleport_script
   portal1: 1
   distance: 0.2
+--- !u!95 &720903126237431556
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29476332268631203}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fa8d83600434a449aa9dcb89586de6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
