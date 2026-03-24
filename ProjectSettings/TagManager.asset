@@ -7,6 +7,9 @@ TagManager:
   - ball
   - portal1
   - portal2
+  - Enemy
+  - tiles
+  - background
   layers:
   - Default
   - TransparentFX

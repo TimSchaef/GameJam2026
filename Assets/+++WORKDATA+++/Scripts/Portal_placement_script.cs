@@ -14,10 +14,17 @@ public class Portal_placement_script : MonoBehaviour
 
     private Transform currentPortal1Selected;
     private Transform currentPortal2Selected;
+    private GameObject tiles;
+    private RaycastHit2D[] hits;
+    private bool hitTiles;
+    private bool hitBack;
+
+    [SerializeField] private Vector2 size;
     
     void Start()
     {
         cam = Camera.main;
+        tiles = GameObject.FindWithTag("tiles");
 
         isPortalOne = portalOnePrefab != null;
     }
@@ -36,13 +43,21 @@ public class Portal_placement_script : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //RaycastHit2D hit = Physics2D.Raycast(cam.transform.position, cam.ScreenToWorldPoint(Input.mousePosition));
+            Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D col = Physics2D.OverlapBox(pos, size, 0);
+            
+            if(col != null)
+                return;
+          
             Vector2 cursorPos = cam.ScreenToWorldPoint(Input.mousePosition);
             GameObject currentPortal = GameObject.FindGameObjectWithTag("portal1");
-            
+                
             if(currentPortal != null)
                 Destroy(currentPortal);
 
             currentPortal1Selected = Instantiate(portalOnePrefab, cursorPos, Quaternion.identity).transform;
+           
         }
         else if (currentPortal1Selected != null && Input.GetMouseButton(0))
         {
@@ -58,6 +73,13 @@ public class Portal_placement_script : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
+            
+            Vector2 pos = cam.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D col = Physics2D.OverlapBox(pos, size, 0);
+            
+            if(col != null)
+                return;
+            
             Vector2 cursorPos = cam.ScreenToWorldPoint(Input.mousePosition);
             GameObject currentPortal = GameObject.FindGameObjectWithTag("portal2");
             
