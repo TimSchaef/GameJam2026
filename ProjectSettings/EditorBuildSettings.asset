@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/+++WORKDATA+++/Scenes/LeonScene.unity
     guid: a07c4c7df6943ba47acfcdf2f9bc96a2
+  - enabled: 1
+    path: Assets/+++WORKDATA+++/Scenes/TimScene.unity
+    guid: 2b913c9739eb6b7478aabff87cc7aff8
+  - enabled: 1
+    path: Assets/+++WORKDATA+++/Scenes/MainMenu.unity
+    guid: 7d252b9b4e2346243a9ca5d92bc02b80
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
